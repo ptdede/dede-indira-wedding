@@ -15,25 +15,43 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@emotion/css": "^11.10.6",
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@fontsource/alice": "^4.5.10",
+    "@fontsource/antic": "^4.5.9",
     "gatsby": "^5.7.0",
+    "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-emotion": "^8.7.0",
     "gatsby-plugin-google-gtag": "^5.7.0",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-manifest": "^5.7.0",
     "gatsby-plugin-netlify-cms": "^7.7.0",
+    "gatsby-plugin-prettier-eslint": "^1.0.6",
     "gatsby-plugin-sharp": "^5.7.0",
     "gatsby-source-filesystem": "^5.7.0",
     "gatsby-transformer-sharp": "^5.7.0",
+    "howler": "^2.2.3",
     "netlify-cms-app": "^2.15.72",
+    "prettier": "^2.8.4",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "use-sound": "^4.0.1"
   },
   "devDependencies": {
+    "@types/howler": "^2.2.7",
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",
     "@types/react-dom": "^18.0.11",
-    "typescript": "^4.9.5"
+    "@typescript-eslint/eslint-plugin": "^5.48.1",
+    "@typescript-eslint/parser": "^5.48.1",
+    "eslint": "^7.23.0",
+    "eslint-config-next": "13.0.0",
+    "eslint-config-prettier": "^8.3.0",
+    "eslint-config-turbo": "latest",
+    "eslint-plugin-import": "^2.27.4",
+    "eslint-plugin-prettier": "^4.2.1",
+    "eslint-plugin-react": "7.31.8",
+    "typescript": "*"
   }
 }
