@@ -391,5 +391,6 @@ export const globalCss = css`
     min-width: 100vw;
     min-height: 100vh;
     line-height: 1.5;
+    overflow: hidden;
   }
 `;

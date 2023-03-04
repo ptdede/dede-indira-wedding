@@ -2,9 +2,9 @@ import { css } from "@emotion/react";
 
 import media from "src/helpers/media-query";
 
-export const styWrapper = css`
+export const styWrapper = (height: string) => css`
   position: relative;
-  height: 100vh;
+  height: ${height};
   background-color: transparent;
   margin: auto;
   display: flex;

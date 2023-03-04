@@ -1,4 +1,5 @@
 import { useEffect, useRef } from "react";
+import { useState } from "react";
 
 import { Howl } from "howler";
 
@@ -10,6 +11,7 @@ import CoupleIntro from "./components/CoupleIntro";
 import { styContainer, styImageDecorator, styWrapper } from "./styles";
 
 const Homepage = () => {
+  const [height, setHeight] = useState("100vh");
   const sound = useRef(
     isBrowser
       ? new Howl({
@@ -23,10 +25,12 @@ const Homepage = () => {
     if (sound.current && !sound.current.playing()) {
       sound.current.play();
     }
+
+    setHeight(`${document.documentElement.clientHeight}px`);
   }, []);
 
   return (
-    <div css={styWrapper}>
+    <div css={styWrapper(height)}>
       <div className="left">
         <img css={styImageDecorator()} src={Floral1} alt="" />
       </div>

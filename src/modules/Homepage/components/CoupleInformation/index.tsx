@@ -2,7 +2,7 @@ import { styCoupleInfoWrapper } from "./styles";
 
 const CoupleInformation = () => {
   return (
-    <section className={styCoupleInfoWrapper}>
+    <section css={styCoupleInfoWrapper}>
       <p>
         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aspernatur
         quaerat vitae dolore temporibus laborum neque eos numquam animi tenetur.
