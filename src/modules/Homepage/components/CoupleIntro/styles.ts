@@ -34,13 +34,13 @@ export const styCoupleIntroWrapper = css`
   }
 `;
 
-export const styInvitationDesc = css`
+export const styInvitationDesc = (isInviteAvailable: boolean) => css`
   position: absolute;
   left: 0;
   right: 0;
   z-index: 1;
   bottom: 0;
-  padding-bottom: 3em;
+  padding-bottom: ${isInviteAvailable ? "3em" : "10em"};
 
   .subtitle {
     font-family: "Alice", serif;
@@ -67,7 +67,7 @@ export const styInviteWrapper = css`
   padding: 1em 2em;
   border-radius: 1em;
   margin: 0 auto;
-  margin-top: 5em;
+  margin-top: 3.5em;
 
   p {
     font-family: "Alice", serif;

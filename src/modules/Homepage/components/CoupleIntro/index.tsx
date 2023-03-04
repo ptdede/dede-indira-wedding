@@ -22,7 +22,7 @@ const CoupleIntro = () => {
     <section css={styCoupleIntroWrapper}>
       <img className="background-image" src={Dummy4} alt="" />
 
-      <div css={styInvitationDesc}>
+      <div css={styInvitationDesc(Boolean(invite))}>
         <p className="subtitle">
           YOU&apos;RE INVITED <br />
           TO THE WEDDING OF
