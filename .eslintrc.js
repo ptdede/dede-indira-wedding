@@ -4,7 +4,11 @@ module.exports = {
     browser: true,
     jest: true,
   },
-  plugins: ["@typescript-eslint", "@typescript-eslint/eslint-plugin"],
+  plugins: [
+    "@typescript-eslint",
+    "@typescript-eslint/eslint-plugin",
+    "@emotion",
+  ],
   extends: [
     "next",
     "turbo",

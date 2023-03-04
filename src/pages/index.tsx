@@ -1,19 +1,18 @@
 import * as React from "react";
 
-import { injectGlobal } from "@emotion/css";
+import { Global } from "@emotion/react";
 
 import Homepage from "src/modules/Homepage";
-import { fontStyle } from "src/styles/fonts";
 import { globalCss } from "src/styles/global";
 
 import type { HeadFC, PageProps } from "gatsby";
 
-injectGlobal`
-  ${globalCss}
-  ${fontStyle}
-`;
-
-const IndexPage: React.FC<PageProps> = () => <Homepage />;
+const IndexPage: React.FC<PageProps> = () => (
+  <>
+    <Global styles={globalCss} />
+    <Homepage />
+  </>
+);
 
 export default IndexPage;
 

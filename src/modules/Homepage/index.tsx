@@ -1,4 +1,4 @@
-import * as React from "react";
+import { useEffect, useRef } from "react";
 
 import { Howl } from "howler";
 
@@ -10,7 +10,7 @@ import CoupleIntro from "./components/CoupleIntro";
 import { styContainer, styImageDecorator, styWrapper } from "./styles";
 
 const Homepage = () => {
-  const sound = React.useRef(
+  const sound = useRef(
     isBrowser
       ? new Howl({
           src: ["/music/thousand-year.mp3"],
@@ -19,23 +19,23 @@ const Homepage = () => {
       : null
   );
 
-  React.useEffect(() => {
+  useEffect(() => {
     if (sound.current && !sound.current.playing()) {
       sound.current.play();
     }
   }, []);
 
   return (
-    <div className={styWrapper}>
+    <div css={styWrapper}>
       <div className="left">
-        <img className={styImageDecorator()} src={Floral1} alt="" />
+        <img css={styImageDecorator()} src={Floral1} alt="" />
       </div>
-      <div className={styContainer}>
+      <div css={styContainer}>
         <CoupleIntro />
         <CoupleInformation />
       </div>
       <div className="right">
-        <img className={styImageDecorator("right")} src={Floral1} alt="" />
+        <img css={styImageDecorator("right")} src={Floral1} alt="" />
       </div>
     </div>
   );

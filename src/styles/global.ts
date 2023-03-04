@@ -1,8 +1,12 @@
-import { css } from "@emotion/css";
+import { css } from "@emotion/react";
 
 import Background from "src/images/bg.png";
 
+import { fontStyle } from "./fonts";
+
 export const globalCss = css`
+  ${fontStyle}
+
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */

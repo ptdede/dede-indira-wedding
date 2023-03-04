@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 
 import * as queryString from "query-string";
 
@@ -19,10 +19,10 @@ const CoupleIntro = () => {
   }, []);
 
   return (
-    <section className={styCoupleIntroWrapper}>
+    <section css={styCoupleIntroWrapper}>
       <img className="background-image" src={Dummy4} alt="" />
 
-      <div className={styInvitationDesc}>
+      <div css={styInvitationDesc}>
         <p className="subtitle">
           YOU&apos;RE INVITED <br />
           TO THE WEDDING OF
@@ -30,7 +30,7 @@ const CoupleIntro = () => {
         <h1 className="couple-name">Dede & Indira</h1>
 
         {invite && (
-          <div className={styInviteWrapper}>
+          <div css={styInviteWrapper}>
             <p>For {invite}</p>
           </div>
         )}

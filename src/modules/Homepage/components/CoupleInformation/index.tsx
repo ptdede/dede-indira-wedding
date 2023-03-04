@@ -1,5 +1,3 @@
-import React from "react";
-
 import { styCoupleInfoWrapper } from "./styles";
 
 const CoupleInformation = () => {
