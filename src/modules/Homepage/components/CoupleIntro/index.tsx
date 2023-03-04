@@ -1,4 +1,4 @@
-import * as React from "react";
+import React, { useEffect, useState } from "react";
 
 import * as queryString from "query-string";
 
@@ -11,7 +11,12 @@ import {
 } from "./styles";
 
 const CoupleIntro = () => {
-  const { invite } = queryString.parse(location.search);
+  const [invite, setInvite] = useState("");
+
+  useEffect(() => {
+    const { invite } = queryString.parse(location.search);
+    setInvite((invite as string) || "");
+  }, []);
 
   return (
     <section className={styCoupleIntroWrapper}>

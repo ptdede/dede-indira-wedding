@@ -3,9 +3,12 @@ import path from "path";
 import type { GatsbyConfig } from "gatsby";
 
 const config: GatsbyConfig = {
+  flags: {
+    DEV_SSR: true,
+  },
   siteMetadata: {
     title: `Dede Indira Wedding`,
-    siteUrl: `https://www.yourdomain.tld`,
+    siteUrl: `https://wedding.ptdede.com`,
   },
   // More easily incorporate content into your pages through automatic TypeScript type generation and better GraphQL IntelliSense.
   // If you use VSCode you can also use the GraphQL plugin
@@ -14,7 +17,6 @@ const config: GatsbyConfig = {
   plugins: [
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-emotion",
-    "gatsby-plugin-google-gtag",
     "gatsby-plugin-image",
     {
       resolve: "gatsby-plugin-manifest",
