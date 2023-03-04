@@ -6,12 +6,17 @@ export const styCoupleIntroWrapper = css`
   height: 100%;
   overflow: hidden;
 
+  .parallax {
+    position: relative;
+    height: 100%;
+  }
+
   &::after {
     position: absolute;
     display: block;
     content: "";
     width: 100%;
-    height: 50vh;
+    height: 60vh;
     z-index: 0;
     bottom: 0;
     background: rgb(15, 15, 20);
@@ -28,9 +33,14 @@ export const styCoupleIntroWrapper = css`
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    object-position: center;
     z-index: 0;
+
+    img {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
   }
 `;
 
@@ -46,7 +56,7 @@ export const styInvitationDesc = (isInviteAvailable: boolean) => css`
     font-family: "Alice", serif;
     color: white;
     text-align: center;
-    margin-bottom: 3em;
+    margin-bottom: 2em;
     letter-spacing: 2px;
     font-size: 0.7em;
     line-height: 1.5;
@@ -65,7 +75,7 @@ export const styInviteWrapper = css`
   background-color: #f6edea;
   width: fit-content;
   padding: 1em 2em;
-  border-radius: 1em;
+  border-radius: 99999px;
   margin: 0 auto;
   margin-top: 3.5em;
 

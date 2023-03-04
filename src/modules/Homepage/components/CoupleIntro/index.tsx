@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
 
 import * as queryString from "query-string";
+import { Parallax } from "react-scroll-parallax";
+import { Autoplay, EffectFade } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import Dummy4 from "src/images/dummies/dummy4.jpeg";
-
+import { sliderImages } from "./constants";
 import {
   styCoupleIntroWrapper,
   styInvitationDesc,
@@ -20,7 +22,26 @@ const CoupleIntro = () => {
 
   return (
     <section css={styCoupleIntroWrapper}>
-      <img className="background-image" src={Dummy4} alt="" />
+      <Parallax speed={-20} className="background-image">
+        <Swiper
+          className="background-image"
+          modules={[Autoplay, EffectFade]}
+          autoplay={{
+            delay: 4000,
+            disableOnInteraction: false,
+          }}
+          effect={"fade"}
+          fadeEffect={{ crossFade: true }}
+          speed={1600}
+          loop={true}
+        >
+          {sliderImages.map((image, idx) => (
+            <SwiperSlide key={`couple-intro-${idx}`}>
+              <img src={image} alt="" />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </Parallax>
 
       <div css={styInvitationDesc(Boolean(invite))}>
         <p className="subtitle">

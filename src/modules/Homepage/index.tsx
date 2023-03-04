@@ -5,6 +5,7 @@ import { Howl } from "howler";
 
 import isBrowser from "src/helpers/isBrowser";
 import Floral1 from "src/images/floral-1.png";
+import RootProvider from "src/providers";
 
 import CoupleInformation from "./components/CoupleInformation";
 import CoupleIntro from "./components/CoupleIntro";
@@ -30,18 +31,20 @@ const Homepage = () => {
   }, []);
 
   return (
-    <div css={styWrapper(height)}>
-      <div className="left">
-        <img css={styImageDecorator()} src={Floral1} alt="" />
+    <RootProvider>
+      <div css={styWrapper(height)}>
+        <div className="left">
+          <img css={styImageDecorator()} src={Floral1} alt="" />
+        </div>
+        <div id="app-container" css={styContainer}>
+          <CoupleIntro />
+          <CoupleInformation />
+        </div>
+        <div className="right">
+          <img css={styImageDecorator("right")} src={Floral1} alt="" />
+        </div>
       </div>
-      <div css={styContainer}>
-        <CoupleIntro />
-        <CoupleInformation />
-      </div>
-      <div className="right">
-        <img css={styImageDecorator("right")} src={Floral1} alt="" />
-      </div>
-    </div>
+    </RootProvider>
   );
 };
 
