@@ -50,7 +50,7 @@ export const styInvitationDesc = (isInviteAvailable: boolean) => css`
   right: 0;
   z-index: 1;
   bottom: 0;
-  padding-bottom: ${isInviteAvailable ? "3em" : "10em"};
+  padding-bottom: ${isInviteAvailable ? "3em" : "8.5em"};
 
   .subtitle {
     font-family: "Alice", serif;
@@ -77,7 +77,7 @@ export const styInviteWrapper = css`
   padding: 0.5em 1.2em;
   border-radius: 99999px;
   margin: 0 auto;
-  margin-top: 3.5em;
+  margin-top: 3em;
 
   p {
     font-family: "Alice", serif;
