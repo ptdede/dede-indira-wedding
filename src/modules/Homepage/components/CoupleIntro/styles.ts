@@ -74,7 +74,7 @@ export const styInvitationDesc = (isInviteAvailable: boolean) => css`
 export const styInviteWrapper = css`
   background-color: #f6edea;
   width: fit-content;
-  padding: 1em 2em;
+  padding: 0.5em 1.2em;
   border-radius: 99999px;
   margin: 0 auto;
   margin-top: 3.5em;
