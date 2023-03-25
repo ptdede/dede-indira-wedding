@@ -17,8 +17,10 @@
   "dependencies": {
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
+    "@fontsource/aleo": "^4.5.9",
     "@fontsource/alice": "^4.5.10",
     "@fontsource/antic": "^4.5.9",
+    "@react-spring/web": "^9.7.1",
     "gatsby": "^5.7.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-emotion": "^8.7.0",

@@ -9,6 +9,7 @@ import RootProvider from "src/providers";
 
 import CoupleInformation from "./components/CoupleInformation";
 import CoupleIntro from "./components/CoupleIntro";
+import SaveTheDate from "./components/SaveTheDate";
 import { styContainer, styImageDecorator, styWrapper } from "./styles";
 
 const Homepage = () => {
@@ -39,6 +40,7 @@ const Homepage = () => {
         <div id="app-container" css={styContainer}>
           <CoupleIntro />
           <CoupleInformation />
+          <SaveTheDate />
         </div>
         <div className="right">
           <img css={styImageDecorator("right")} src={Floral1} alt="" />

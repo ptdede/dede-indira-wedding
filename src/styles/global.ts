@@ -383,7 +383,8 @@ export const globalCss = css`
 
   html,
   body {
-    font-family: "Antic", sans-serif;
+    font-family: "Aleo", sans-serif;
+    font-weight: 300;
     background-color: #f6edea;
     background-image: url(${Background});
     background-repeat: no-repeat;

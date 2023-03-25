@@ -5,7 +5,8 @@ import { Parallax } from "react-scroll-parallax";
 import { Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { sliderImages } from "./constants";
+import { sliderImages } from "src/constants/images";
+
 import {
   styCoupleIntroWrapper,
   styInvitationDesc,
