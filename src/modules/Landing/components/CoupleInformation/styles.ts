@@ -84,11 +84,12 @@ export const styProfilesWrapper = css`
     white-space: nowrap;
     font-weight: 300;
     font-size: 0.9em;
+    letter-spacing: 0.2em;
   }
 
   &.left-dir {
     .text-decorative {
-      top: 1rem;
+      top: -1.3rem;
       transform: rotate(90deg);
     }
   }
