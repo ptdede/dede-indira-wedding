@@ -21,6 +21,9 @@ export const decorativeFlowers = [
   DecorativeFlower3,
 ];
 
+export const BASE_SAMPLE_IMAGE = (number = 1) =>
+  `/images/samples/img-sample-2-${number}.jpg`;
+
 export const floralImages = {
   FloralFrame,
 };

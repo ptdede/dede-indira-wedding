@@ -383,15 +383,43 @@ export const globalCss = css`
 
   html,
   body {
-    font-family: "Aleo", sans-serif;
+    font-family: "Montserrat", sans-serif;
     font-weight: 300;
+    /* background-color: #f6edea; */
+    /* background-image: url(${Background}); */
+    /* background-repeat: no-repeat; */
+    /* background-size: cover; */
+    /* min-width: 100vw; */
+    /* min-height: 100vh; */
+    /* line-height: 1.5; */
+    /* overflow: hidden; */
+  }
+
+  html {
+    background-color: #222222;
+  }
+
+  body {
+    position: relative;
+    max-width: 415px;
     background-color: #f6edea;
-    background-image: url(${Background});
-    background-repeat: no-repeat;
-    background-size: cover;
-    min-width: 100vw;
-    min-height: 100vh;
-    line-height: 1.5;
-    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  :root {
+    --color-black: #222222;
+    --color-primary: #2a2f4f;
+    --color-secondary: #917fb3;
+    --color-tertiary: #e5beec;
+    --color-accent: #fde2f3;
+    --color-white: #fffbf5;
+    --max-width: 415px;
+    --font-primary: "Bodoni Moda", serif;
+    --font-text: "Montserrat", sans-serif;
   }
 `;
