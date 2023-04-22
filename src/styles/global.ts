@@ -1,7 +1,5 @@
 import { css } from "@emotion/react";
 
-import Background from "src/images/bg.png";
-
 import { fontStyle } from "./fonts";
 
 export const globalCss = css`
@@ -381,36 +379,6 @@ export const globalCss = css`
     border-spacing: 0;
   }
 
-  html,
-  body {
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300;
-    /* background-color: #f6edea; */
-    /* background-image: url(${Background}); */
-    /* background-repeat: no-repeat; */
-    /* background-size: cover; */
-    /* min-width: 100vw; */
-    /* min-height: 100vh; */
-    /* line-height: 1.5; */
-    /* overflow: hidden; */
-  }
-
-  html {
-    background-color: #222222;
-  }
-
-  body {
-    position: relative;
-    max-width: 415px;
-    background-color: #f6edea;
-    margin: 0 auto;
-  }
-
-  * {
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-
   :root {
     --color-black: #222222;
     --color-primary: #2a2f4f;
@@ -421,5 +389,28 @@ export const globalCss = css`
     --max-width: 415px;
     --font-primary: "Bodoni Moda", serif;
     --font-text: "Montserrat", sans-serif;
+  }
+
+  html,
+  body {
+    font-family: var(--font-text);
+    font-weight: 400;
+    line-height: 1.5;
+  }
+
+  html {
+    background-color: var(--color-black);
+  }
+
+  body {
+    position: relative;
+    max-width: 415px;
+    background-color: var(--color-white);
+    margin: 0 auto;
+  }
+
+  * {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 `;

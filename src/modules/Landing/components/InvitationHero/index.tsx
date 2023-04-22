@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { useSpring } from "@react-spring/web";
+import * as queryString from "query-string";
 import { useLockBodyScroll } from "react-use";
 
 import AnimatedTrail from "src/components/AnimatedTrail";
@@ -13,6 +14,13 @@ const InvitationHero = () => {
   const [height, setHeight] = useState(`100vh`);
   const [bodyLocked, setBodyLocked] = useState(true);
   const [hide, setHide] = useState(false);
+  const [to, setTo] = useState("");
+
+  useEffect(() => {
+    const { to } = queryString.parse(location.search);
+    setTo((to as string) || "");
+  }, []);
+
   const [style, animation] = useSpring(() => ({
     top: "0px",
     config: { mass: 5, tension: 2000, friction: 600 },
@@ -52,7 +60,7 @@ const InvitationHero = () => {
           </h1>
 
           <p className="dear">DEAR</p>
-          <p className="to">Wira & Alin</p>
+          <p className="to">{to || "Our Guest"}</p>
 
           <button onClick={handleOpenInvitation}>open invitation</button>
         </AnimatedTrail>

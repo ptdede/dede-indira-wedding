@@ -33,7 +33,7 @@ export const AnimatedInvitationHeroWrapper = styled(
     display: block;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, #2a2e2400 40%, #2a2e24 100%);
+    background-image: linear-gradient(180deg, #2a2e2400 50%, #2a2e24 100%);
     z-index: 1;
   }
 
@@ -58,7 +58,7 @@ export const AnimatedInvitationHeroWrapper = styled(
       font-family: var(--font-primary);
       font-weight: 600;
       font-size: 2.5em;
-      margin-bottom: 3rem;
+      margin-bottom: 1.5rem;
 
       .and {
         font-size: 0.5em;

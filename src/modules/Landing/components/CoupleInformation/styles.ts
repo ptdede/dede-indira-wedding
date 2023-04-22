@@ -1,58 +1,95 @@
 import { css } from "@emotion/react";
 
 export const styCoupleInfoWrapper = css`
-  .message {
-    margin: 2em 3em;
-    text-align: center;
-  }
+  padding: 4rem 0;
 
   .profile {
-    margin-bottom: 3em;
+    margin-bottom: 5rem;
   }
 
-  .profile-image {
+  .image-slider {
     position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    width: 240px;
+    height: 320px;
+    flex-grow: 0;
+    flex-shrink: 0;
 
-    .frame {
-      width: 350px;
-      height: 350px;
-      object-fit: contain;
-      object-position: center;
+    .slider {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 0;
+      overflow: hidden;
     }
 
-    .photo {
-      position: absolute;
-      width: 280px;
-      height: 280px;
-      z-index: -1;
-      border-radius: 50%;
-
-      img {
-        width: 280px;
-        height: 280px;
-        object-fit: cover;
-      }
+    .image {
+      object-fit: cover;
+      object-position: center;
+      width: 100%;
+      height: 100%;
     }
   }
 
-  .texts {
-    text-align: center;
+  .profile-information {
+    padding: 0 1.5rem;
+    text-align: left;
+    margin-top: 2rem;
+  }
 
-    .profile-name {
-      font-weight: bold;
-      font-size: 1.2em;
+  .profile-name {
+    font-family: var(--font-primary);
+    font-size: 2em;
+    font-weight: 600;
+    color: var(--color-primary);
+    margin-bottom: 1rem;
+  }
+
+  .profile-subname {
+    font-size: 0.8em;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    color: var(--color-primary);
+  }
+
+  .profile-parent {
+    font-size: 0.9em;
+  }
+
+  .right-dir {
+    .profile-information {
+      text-align: right;
     }
+  }
+`;
 
-    .profile-subname1 {
-      font-size: 0.8em;
-    }
+export const styProfilesWrapper = css`
+  display: flex;
+  width: 100%;
 
-    .profile-subname {
-      font-weight: 400;
-      font-size: 0.8em;
+  > div {
+    flex-grow: 0;
+    flex-shrink: 0;
+    position: relative;
+  }
+
+  &.right-dir {
+    justify-content: flex-end;
+  }
+
+  .text-decorative {
+    position: absolute;
+    top: 6rem;
+    transform: rotate(270deg);
+    transform-origin: 0% 100%;
+    white-space: nowrap;
+    font-weight: 300;
+    font-size: 0.9em;
+  }
+
+  &.left-dir {
+    .text-decorative {
+      top: 1rem;
+      transform: rotate(90deg);
     }
   }
 `;
