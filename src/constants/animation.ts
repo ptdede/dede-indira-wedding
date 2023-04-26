@@ -1,3 +1,7 @@
+const animationConfigs = {
+  config: { mass: 5, tension: 2000, friction: 700 },
+};
+
 export const animBottomToTop = () => ({
   from: {
     opacity: 0,
@@ -7,6 +11,7 @@ export const animBottomToTop = () => ({
     opacity: 1,
     y: 0,
   },
+  ...animationConfigs,
 });
 
 export const animTopToBottom = () => ({
@@ -18,6 +23,7 @@ export const animTopToBottom = () => ({
     opacity: 1,
     y: 0,
   },
+  ...animationConfigs,
 });
 
 export const animLeftToRight = () => ({
@@ -29,6 +35,7 @@ export const animLeftToRight = () => ({
     opacity: 1,
     x: 0,
   },
+  ...animationConfigs,
 });
 
 export const animRightToLeft = () => ({
@@ -40,4 +47,5 @@ export const animRightToLeft = () => ({
     opacity: 1,
     x: 0,
   },
+  ...animationConfigs,
 });

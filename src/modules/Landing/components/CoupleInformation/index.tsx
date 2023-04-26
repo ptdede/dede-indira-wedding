@@ -1,20 +1,16 @@
-import { useInView, animated } from "@react-spring/web";
+import { useInView, a } from "@react-spring/web";
 import { Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import AnimatedText from "src/components/AnimatedText";
-import { animBottomToTop } from "src/constants/animation";
-import {
-  floralImages,
-  sliderImagesMen,
-  sliderImagesWomen,
-} from "src/constants/images";
+import { animLeftToRight, animRightToLeft } from "src/constants/animation";
+import { sliderImagesMen, sliderImagesWomen } from "src/constants/images";
 
 import { styCoupleInfoWrapper, styProfilesWrapper } from "./styles";
 
 const CoupleInformation = () => {
-  const [ref1, springs1] = useInView(animBottomToTop);
-  const [ref2, springs2] = useInView(animBottomToTop);
+  const [ref1, springs1] = useInView(animRightToLeft);
+  const [ref2, springs2] = useInView(animLeftToRight);
 
   return (
     <section css={styCoupleInfoWrapper}>
@@ -25,7 +21,7 @@ const CoupleInformation = () => {
               <span className="text-decorative">THE GROOM</span>
             </AnimatedText>
           </div>
-          <div className="image-slider">
+          <a.div ref={ref1} style={springs1} className="image-slider">
             <Swiper
               className="slider"
               modules={[Autoplay, EffectFade]}
@@ -44,7 +40,7 @@ const CoupleInformation = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </a.div>
         </div>
 
         <div className="profile-information">
@@ -63,7 +59,7 @@ const CoupleInformation = () => {
 
       <div className="profile left-dir">
         <div css={styProfilesWrapper} className="left-dir">
-          <div className="image-slider">
+          <a.div ref={ref2} style={springs2} className="image-slider">
             <Swiper
               className="slider"
               modules={[Autoplay, EffectFade]}
@@ -82,7 +78,7 @@ const CoupleInformation = () => {
                 </SwiperSlide>
               ))}
             </Swiper>
-          </div>
+          </a.div>
           <div>
             <AnimatedText>
               <span className="text-decorative">THE BRIDE</span>

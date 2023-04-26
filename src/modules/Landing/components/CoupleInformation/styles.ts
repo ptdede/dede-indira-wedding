@@ -2,6 +2,8 @@ import { css } from "@emotion/react";
 
 export const styCoupleInfoWrapper = css`
   padding: 4rem 0;
+  width: 100%;
+  overflow-x: hidden;
 
   .profile {
     margin-bottom: 5rem;
