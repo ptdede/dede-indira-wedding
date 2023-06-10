@@ -389,6 +389,7 @@ export const globalCss = css`
     --max-width: 415px;
     --font-primary: "Bodoni Moda", serif;
     --font-text: "Montserrat", sans-serif;
+    --font-custom-smooch: "Smooch", sans-serif;
   }
 
   html,

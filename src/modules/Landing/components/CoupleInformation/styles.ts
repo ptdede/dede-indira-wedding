@@ -7,6 +7,10 @@ export const styCoupleInfoWrapper = css`
 
   .profile {
     margin-bottom: 5rem;
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   .image-slider {

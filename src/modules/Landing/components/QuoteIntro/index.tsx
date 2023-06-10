@@ -5,16 +5,15 @@ import { styQuoteIntroWrapper } from "./styles";
 const QuoteIntro = () => {
   return (
     <section css={styQuoteIntroWrapper}>
-      <AnimatedText className="quote-title">Rgveda: X.85.36</AnimatedText>
+      <AnimatedText className="quote-title">Rgveda: X.85.42</AnimatedText>
       <AnimatedText className="quote-main">
-        Grbhnāmi te saubhagatvāya hastam, Mayā patyā jaradastir yathāsah, Bhago
-        aryamā savitā puramdhir, Mahyam tvādurgārhapatyāya devāh.
+        Ihaiva stam mā vi yaustam, Visvām āyur vyasnutam. Krindantau putrair
+        naptrbhih, Modamānau sve grhe.
       </AnimatedText>
       <AnimatedText className="quote-translate">
-        In a wedding, you are united for the sake of happiness with a promise to
-        make each other happy. With me, you will live forever because God will
-        surely give His grace as protector and witness in this marriage.
-        That&apos;s why you are united as one family.
+        Oh, dearest couple, stand as one, never to be apart, In a symphony of
+        love, let harmony fill your heart, Guiding your children with tender
+        love and art, Creating a sanctuary of togetherness, where joys impart.
       </AnimatedText>
     </section>
   );

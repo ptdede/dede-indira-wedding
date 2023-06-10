@@ -1329,6 +1329,11 @@
   resolved "https://registry.yarnpkg.com/@fontsource/montserrat/-/montserrat-4.5.14.tgz#5f4bfc5e7f234a986d94d9e7e7193f852e6971e3"
   integrity sha512-fTvrteVzuFUePhr4QYBGoK8G/YHLJ3IhF1HhKg0AxcFvZajJT7rM7ULdmKLSd2PkX44R3aaFZq1zDbmjbGGI+w==
 
+"@fontsource/smooch@^5.0.3":
+  version "5.0.3"
+  resolved "https://registry.yarnpkg.com/@fontsource/smooch/-/smooch-5.0.3.tgz#c3862b9938a7d9e1adc44d1813871516e6d7dc2e"
+  integrity sha512-G1XscCwnCIcqIxhjqQOSFAJSqZRD1naxBJWO+RY2aQRHLXacASrDbkrwYvjxqtl2p9cgpJwem/kz643Ab8257w==
+
 "@gatsbyjs/parcel-namer-relative-to-cwd@^2.7.0":
   version "2.7.0"
   resolved "https://registry.yarnpkg.com/@gatsbyjs/parcel-namer-relative-to-cwd/-/parcel-namer-relative-to-cwd-2.7.0.tgz#8652c0f589f8dd51c4d8b84cab1b4f2344d4b545"

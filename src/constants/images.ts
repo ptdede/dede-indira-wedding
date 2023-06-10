@@ -40,3 +40,5 @@ export const sliderImagesWomen = [
 export const floralImages = {
   FloralFrame,
 };
+
+export const imageFooter = "/images/samples/img-sample-2-22.jpg";
