@@ -6,7 +6,7 @@ const Footer = () => {
     <section css={styFooterWrapper}>
       <img src={imageFooter} alt="" />
       <div className="description">
-        <h1>Thank you</h1>
+        <h1>Thank You</h1>
         <p>
           Your presence and blessings would be a cherished honor, filling our
           hearts with immense joy. We eagerly await your gracious attendance as
