@@ -1,6 +1,6 @@
 name: DEV - Try Dispatch
 on:
-  workflow_dispatch
+  workflow_dispatch:
   push:
     branches:
       - master
