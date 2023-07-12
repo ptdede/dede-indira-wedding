@@ -1,0 +1,17 @@
+name: DEV - Try Dispatch
+on:
+  workflow_dispatch
+  push:
+    branches:
+      - master
+    paths-ignore:
+      - ".github/workflows/**"
+
+jobs:
+  try_run:
+    name: Try run
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy to DEV with Upload to Google Storage Bucket
+        run: |-
+          echo "Pipeline running!"
