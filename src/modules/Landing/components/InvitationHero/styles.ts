@@ -3,7 +3,7 @@ import { animated } from "@react-spring/web";
 
 interface AnimatedInvitationHeroWrapperProps {
   height: string;
-  hide: boolean;
+  appear?: string;
 }
 
 export const AnimatedInvitationHeroWrapper = styled(
@@ -16,7 +16,7 @@ export const AnimatedInvitationHeroWrapper = styled(
   position: fixed;
   z-index: 999;
   top: 0;
-  pointer-events: ${(props) => (props.hide ? "none" : "auto")};
+  pointer-events: ${(props) => (Boolean(props.appear) ? "auto" : "none")};
 
   img {
     position: absolute;

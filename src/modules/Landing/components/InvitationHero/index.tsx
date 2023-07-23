@@ -1,10 +1,10 @@
 import { useCallback, useEffect, useState } from "react";
 
 import { useSpring } from "@react-spring/web";
-import * as queryString from "query-string";
 import { useLockBodyScroll } from "react-use";
 
 import AnimatedTrail from "src/components/AnimatedTrail";
+import useReceiver from "src/hooks/useReceiver";
 import { useMusic } from "src/providers/music";
 
 import { AnimatedInvitationHeroWrapper } from "./styles";
@@ -13,13 +13,8 @@ const InvitationHero = () => {
   const { handleSoundPlay } = useMusic();
   const [height, setHeight] = useState(`100vh`);
   const [bodyLocked, setBodyLocked] = useState(true);
-  const [hide, setHide] = useState(false);
-  const [to, setTo] = useState("");
-
-  useEffect(() => {
-    const { to } = queryString.parse(location.search);
-    setTo((to as string) || "");
-  }, []);
+  const [appear, setAppear] = useState(true);
+  const { receiver } = useReceiver();
 
   const [style, animation] = useSpring(() => ({
     top: "0px",
@@ -46,11 +41,15 @@ const InvitationHero = () => {
       top: `-${height}`,
     });
     setBodyLocked(false);
-    setHide(true);
+    setAppear(false);
   }, [animation, handleSoundPlay, height]);
 
   return (
-    <AnimatedInvitationHeroWrapper height={height} hide={hide} style={style}>
+    <AnimatedInvitationHeroWrapper
+      height={height}
+      appear={`${appear}`}
+      style={style}
+    >
       <img src="/images/cover-website.jpg" alt="landing banner" />
       <section>
         <AnimatedTrail open={true}>
@@ -60,7 +59,7 @@ const InvitationHero = () => {
           </h1>
 
           <p className="dear">DEAR</p>
-          <p className="to">{to || "Our Guest"}</p>
+          <p className="to">{receiver || "Our Guest"}</p>
 
           <button onClick={handleOpenInvitation}>open invitation</button>
         </AnimatedTrail>

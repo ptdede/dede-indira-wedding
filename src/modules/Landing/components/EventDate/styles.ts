@@ -105,18 +105,20 @@ export const styEventDateWrapper = css`
       text-transform: uppercase;
 
       span {
-        font-size: 1.5em;
+        font-size: 1em;
+        font-weight: 600;
+        opacity: 0.7;
 
-        &.month {
+        /* &.month {
           font-size: 1em;
           font-weight: 600;
-        }
+        } */
       }
     }
   }
 
   .dates {
-    &:nth-child(even) {
+    &:nth-of-type(even) {
       .description {
         flex-direction: row-reverse;
       }

@@ -1,73 +1,186 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
-import { SubmitHandler, useForm } from "react-hook-form";
+import { DocumentData, QuerySnapshot } from "firebase/firestore";
+import { Controller, SubmitHandler, useForm } from "react-hook-form";
+import Skeleton from "react-loading-skeleton";
 
-import { FormValues } from "./types";
-import { getAllReservation, postToDatabase } from "./utils/api";
+import useReceiver from "src/hooks/useReceiver";
 
-interface ReservationData extends FormValues {
-  key: string;
-}
+import {
+  styMessagesWrapper,
+  styReservationValue,
+  styReservationWrapper,
+} from "./styles";
+import { FormValues, ReservationData } from "./types";
+import {
+  LIMIT_RSVP_DATA,
+  getAllReservation,
+  normalizeData,
+  paginationNextReservation,
+  postToDatabase,
+} from "./utils/api";
 
 const Reservation = () => {
   const [messages, setMessages] = useState<ReservationData[]>([]);
-  const { register, handleSubmit, reset } = useForm<FormValues>();
+  const [lastSnapshot, setLastSnapshot] =
+    useState<QuerySnapshot<DocumentData>>();
+  const [enableLoadmore, setEnableLoadmore] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const { receiver } = useReceiver();
+
+  const { control, formState, register, handleSubmit, reset, setValue } =
+    useForm<FormValues>({
+      mode: "all",
+      defaultValues: {
+        name: receiver,
+      },
+    });
 
   useEffect(() => {
-    getAllReservation((data) => {
-      const allData = data.val();
-      console.log("DEDE:: tulus...", allData);
+    setValue("name", receiver);
+  }, [receiver, setValue]);
 
-      if (Boolean(allData)) {
-        const arrData: ReservationData[] = Object.keys(allData).map((key) => ({
-          key,
-          ...allData[key],
-        }));
-        setMessages(arrData);
-      }
-    });
+  const fetchData = useCallback(async () => {
+    setIsLoading(true);
+    const reservationSnap = await getAllReservation();
+    const data = normalizeData(reservationSnap);
+
+    setIsLoading(false);
+    setLastSnapshot(reservationSnap);
+    setMessages(data);
+
+    if (data.length && data.length >= LIMIT_RSVP_DATA) {
+      setEnableLoadmore(true);
+    }
   }, []);
 
-  const onSubmit: SubmitHandler<FormValues> = (data) => {
-    postToDatabase(data);
-    reset();
+  const loadMore = useCallback(async () => {
+    if (lastSnapshot) {
+      setIsLoading(true);
+      const loadMoreSnap = await paginationNextReservation(lastSnapshot);
+      const data = normalizeData(loadMoreSnap);
+      setMessages((prev) => [...prev, ...data]);
+
+      setIsLoading(false);
+      setLastSnapshot(loadMoreSnap);
+
+      if (!data.length || data.length < LIMIT_RSVP_DATA) {
+        setEnableLoadmore(false);
+      }
+    }
+  }, [lastSnapshot]);
+
+  useEffect(() => {
+    fetchData();
+  }, [fetchData]);
+
+  const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    const successData = await postToDatabase(data);
+
+    if (!successData) {
+    } else {
+      setMessages((prev) => [successData, ...prev]);
+      reset();
+    }
   };
 
   return (
-    <div>
-      <p>Reservation</p>
+    <section css={styReservationWrapper}>
+      <h1>Chat & Reservation</h1>
 
       <form onSubmit={handleSubmit(onSubmit)}>
-        <input {...register("name", { required: true })} placeholder="Name" />
+        <div className="input-group">
+          <input
+            {...register("name", { required: "Please input your name" })}
+            id="name"
+          />
+          <label htmlFor="name">Name</label>
+          {formState.errors.name && (
+            <p className="errors">{formState.errors.name.message}</p>
+          )}
+        </div>
 
-        <br />
-        <select {...register("coming", { required: true })}>
-          <option value="coming">I am coming</option>
-          <option value="notComing">Not coming</option>
-        </select>
+        <Controller
+          name="coming"
+          control={control}
+          rules={{
+            validate: (value) => {
+              const isValid = typeof value !== "undefined";
+              return !isValid ? "Please select attendance" : true;
+            },
+          }}
+          render={({ field }) => (
+            <div css={styReservationValue(field.value)}>
+              <div>
+                <button
+                  className="coming"
+                  type="button"
+                  onClick={() => field.onChange(true)}
+                >
+                  I&apos;ll be there!
+                </button>
+                <button
+                  className="not-coming"
+                  type="button"
+                  onClick={() => field.onChange(false)}
+                >
+                  Can&apos;t attend
+                </button>
+              </div>
 
-        <br />
-        <textarea
-          {...register("message", { required: true })}
-          cols={30}
-          rows={10}
-          placeholder="message"
+              {formState.errors.coming && (
+                <p className="errors">{formState.errors.coming.message}</p>
+              )}
+            </div>
+          )}
         />
-        {/* <button type="submit">Comment</button> */}
-        <input type="submit" />
+
+        <div className="input-group">
+          <textarea
+            {...register("message", { required: "Please write a message" })}
+            id="message"
+            cols={30}
+            rows={10}
+          />
+          <label htmlFor="message">Message</label>
+          {formState.errors.message && (
+            <p className="errors">{formState.errors.message.message}</p>
+          )}
+        </div>
+
+        <button type="submit">Submit</button>
       </form>
 
-      <div>
-        {Boolean(messages.length) &&
-          messages.map((message) => (
-            <div key={message.key}>
-              <p>{message.name}</p>
-              <p>{message.message}</p>
-              <p>{message.coming}</p>
+      <div css={styMessagesWrapper}>
+        {messages.map((message) => (
+          <div className="message-card" key={message.id}>
+            <p className="name">{message.name}</p>
+            <p className="message">{message.message}</p>
+            <p className="date">{message.date}</p>
+            {/* <p className="attendance">{JSON.stringify(message.coming)}</p> */}
+          </div>
+        ))}
+
+        {isLoading && (
+          <div className="loading">
+            <div>
+              <Skeleton width="80%" />
+              <Skeleton />
             </div>
-          ))}
+            <div>
+              <Skeleton width="80%" />
+              <Skeleton />
+            </div>
+          </div>
+        )}
+
+        {enableLoadmore && !isLoading && (
+          <button type="button" className="loadmore" onClick={loadMore}>
+            view more chat
+          </button>
+        )}
       </div>
-    </div>
+    </section>
   );
 };
 

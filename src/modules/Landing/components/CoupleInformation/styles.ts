@@ -43,6 +43,7 @@ export const styCoupleInfoWrapper = css`
   }
 
   .profile-name {
+    /* font-family: var(--font-custom-italianno); */
     font-family: var(--font-primary);
     font-size: 2em;
     font-weight: 600;

@@ -1,10 +1,6 @@
 import { css } from "@emotion/react";
 
-import { fontStyle } from "./fonts";
-
 export const globalCss = css`
-  ${fontStyle}
-
   html {
     line-height: 1.15; /* 1 */
     -webkit-text-size-adjust: 100%; /* 2 */
@@ -390,6 +386,7 @@ export const globalCss = css`
     --font-primary: "Bodoni Moda", serif;
     --font-text: "Montserrat", sans-serif;
     --font-custom-smooch: "Smooch", sans-serif;
+    --font-custom-italianno: "Italianno", sans-serif;
   }
 
   html,
