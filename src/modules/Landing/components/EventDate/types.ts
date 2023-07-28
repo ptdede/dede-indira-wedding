@@ -12,4 +12,5 @@ export interface EventDate {
   images: string[];
   note?: string;
   vendorName?: string;
+  dresscode?: string;
 }

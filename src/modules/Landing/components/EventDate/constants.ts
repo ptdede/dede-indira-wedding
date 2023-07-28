@@ -35,7 +35,7 @@ export const allDates: EventDate[] = [
   {
     id: "KPL_RSV",
     type: "KPL",
-    title: "Resepsi",
+    title: "Resepsi Adat",
     when: "Friday, 22 September 2023",
     dateVertical:
       "<span>22</span><br/><span class='month'>09</span><br/><span>23</span>",
@@ -47,7 +47,7 @@ export const allDates: EventDate[] = [
   {
     id: "BHM_RSV",
     type: "BHM",
-    title: "Resepsi",
+    title: "The Reception",
     when: "Sunday, 24 September 2023",
     dateVertical:
       "<span>24</span><br/><span class='month'>09</span><br/><span>23</span>",
@@ -57,5 +57,6 @@ export const allDates: EventDate[] = [
     vendorName: "Bhumiku",
     mapLink: "https://goo.gl/maps/5TVqv5hcfTmYhkMt9",
     images: sliderImagesMen,
+    dresscode: "Dresscode: white",
   },
 ];

@@ -48,6 +48,7 @@ const EventCard = (props: EventCardProps) => {
           <div>
             <p className="when">{date.when}</p>
             <p className="time">{date.time}</p>
+            {date.dresscode && <p className="dresscode">{date.dresscode}</p>}
           </div>
 
           <div>

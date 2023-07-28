@@ -94,6 +94,11 @@ export const styEventDateWrapper = css`
         font-size: 0.7em;
         opacity: 0.7;
       }
+
+      .dresscode {
+        font-style: italic;
+        color: var(--color-primary);
+      }
     }
 
     .description-date {

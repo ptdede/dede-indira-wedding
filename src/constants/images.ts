@@ -42,3 +42,10 @@ export const floralImages = {
 };
 
 export const imageFooter = "/images/samples/img-sample-2-22.jpg";
+
+export const imageCoupleIntro = [
+  "/images/intro-1.jpg",
+  "/images/intro-2.jpg",
+  "/images/intro-3.jpg",
+  "/images/intro-4.jpg",
+];

@@ -2,7 +2,7 @@ import { Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import AnimatedText from "src/components/AnimatedText";
-import { sliderImages } from "src/constants/images";
+import { imageCoupleIntro } from "src/constants/images";
 
 import { styCoupleIntroWrapper } from "./styles";
 
@@ -23,7 +23,7 @@ const CoupleIntro = () => {
             speed={1600}
             loop={true}
           >
-            {sliderImages.map((image, idx) => (
+            {imageCoupleIntro.map((image, idx) => (
               <SwiperSlide key={`couple-intro-${idx}`}>
                 <img className="image" src={image} alt="" />
               </SwiperSlide>
