@@ -4,31 +4,12 @@ import {
   sliderImagesWomen,
 } from "src/constants/images";
 
-export const allDates = [
+import { EventDate } from "./types";
+
+export const allDates: EventDate[] = [
   {
-    id: "KPL",
-    title: "Pawiwahan",
-    when: "Friday, 22 September 2023",
-    dateVertical:
-      "<span>22</span><br/><span class='month'>09</span><br/><span>23</span>",
-    time: "08.00 WITA - finished",
-    place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
-    mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
-    images: sliderImages,
-  },
-  {
-    id: "KPL_RSV",
-    title: "Resepsi",
-    when: "Friday, 22 September 2023",
-    dateVertical:
-      "<span>22</span><br/><span class='month'>09</span><br/><span>23</span>",
-    time: "09.00 WITA - finished",
-    place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
-    mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
-    images: sliderImagesWomen,
-  },
-  {
-    id: "BLG_RSV",
+    id: "SNG_RSV",
+    type: "SNG",
     title: "Memadik",
     when: "Tuesday, 19 September 2023",
     dateVertical:
@@ -40,7 +21,32 @@ export const allDates = [
     images: sliderImages,
   },
   {
-    id: "BHMK_RSV",
+    id: "KPL",
+    type: "KPL",
+    title: "Pawiwahan",
+    when: "Friday, 22 September 2023",
+    dateVertical:
+      "<span>22</span><br/><span class='month'>09</span><br/><span>23</span>",
+    time: "08.00 WITA - finished",
+    place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
+    mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
+    images: sliderImages,
+  },
+  {
+    id: "KPL_RSV",
+    type: "KPL",
+    title: "Resepsi",
+    when: "Friday, 22 September 2023",
+    dateVertical:
+      "<span>22</span><br/><span class='month'>09</span><br/><span>23</span>",
+    time: "09.00 WITA - finished",
+    place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
+    mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
+    images: sliderImagesWomen,
+  },
+  {
+    id: "BHM_RSV",
+    type: "BHM",
     title: "Resepsi",
     when: "Sunday, 24 September 2023",
     dateVertical:

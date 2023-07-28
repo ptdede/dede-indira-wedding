@@ -3,9 +3,10 @@ import { css } from "@emotion/react";
 export const styEventDateWrapper = css`
   background-color: var(--color-secondary);
   padding: 2rem 1.5rem;
+  overflow: hidden;
 
   h1 {
-    font-family: var(--font-primary);
+    font-family: var(--font-secondary);
     color: var(--color-white);
     text-align: center;
     padding: 1rem 0;
