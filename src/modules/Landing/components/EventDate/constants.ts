@@ -1,8 +1,4 @@
-import {
-  sliderImages,
-  sliderImagesMen,
-  sliderImagesWomen,
-} from "src/constants/images";
+import { dateImages } from "src/constants/images";
 
 import { EventDate } from "./types";
 
@@ -18,7 +14,7 @@ export const allDates: EventDate[] = [
     place: "Jl. Gn. Agung, Gg III/5 No. 9, Banjar Paketan, Buleleng, Bali",
     mapLink: "https://goo.gl/maps/nUjw4LmzZ6hXTZ2q9",
     note: "(Lokasi belakang SDN 3 Banjar Tegal)",
-    images: sliderImages,
+    images: dateImages.sng,
   },
   {
     id: "KPL",
@@ -30,7 +26,7 @@ export const allDates: EventDate[] = [
     time: "08.00 WITA - finished",
     place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
     mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
-    images: sliderImages,
+    images: dateImages.kpl,
   },
   {
     id: "KPL_RSV",
@@ -42,7 +38,7 @@ export const allDates: EventDate[] = [
     time: "09.00 WITA - finished",
     place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
     mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
-    images: sliderImagesWomen,
+    images: dateImages.sng,
   },
   {
     id: "BHM_RSV",
@@ -56,7 +52,7 @@ export const allDates: EventDate[] = [
       "Jl. Gn. Soputan No.49, Pemecutan Klod, Kec. Denpasar Bar., Kota Denpasar, Bali",
     vendorName: "Bhumiku",
     mapLink: "https://goo.gl/maps/5TVqv5hcfTmYhkMt9",
-    images: sliderImagesMen,
     dresscode: "Dresscode: white",
+    images: dateImages.bhm,
   },
 ];

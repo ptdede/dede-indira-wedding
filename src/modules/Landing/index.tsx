@@ -7,6 +7,7 @@ import Footer from "./components/Footer";
 import InvitationHero from "./components/InvitationHero";
 import QuoteIntro from "./components/QuoteIntro";
 import Reservation from "./components/Reservation";
+import SendGift from "./components/SendGift";
 import SinglePhoto from "./components/SinglePhoto";
 
 const Landing = () => {
@@ -20,6 +21,7 @@ const Landing = () => {
       <EventDate />
       <Reservation />
       <Footer />
+      <SendGift />
     </RootProvider>
   );
 };

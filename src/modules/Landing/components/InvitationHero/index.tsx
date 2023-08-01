@@ -50,14 +50,19 @@ const InvitationHero = () => {
       appear={`${appear}`}
       style={style}
     >
-      <img src="/images/cover-website.jpg" alt="landing banner" />
-      <section>
+      <section className="top">
         <AnimatedTrail open={true}>
           <p className="subtitle">THE WEDDING OF</p>
           <h1>
             Dede <span className="and">&</span> Indira
           </h1>
+        </AnimatedTrail>
+      </section>
 
+      <img src="/images/cover-website.jpg" alt="landing banner" />
+
+      <section className="bottom">
+        <AnimatedTrail open={true}>
           <p className="dear">DEAR</p>
           <p className="to">{receiver || "Our Guest"}</p>
 

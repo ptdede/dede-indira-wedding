@@ -1,4 +1,4 @@
-import { css } from "@emotion/react";
+import { css, keyframes } from "@emotion/react";
 
 export const styReservationWrapper = css`
   padding: 2rem 1.5rem;
@@ -107,6 +107,10 @@ export const styReservationValue = (isComing?: boolean) => css`
         color: var(--color-white);
         opacity: 1;
         border: solid 1px #76a21e;
+
+        &:focus {
+          border: solid 1px #76a21e;
+        }
       }
     `}
 
@@ -117,6 +121,10 @@ export const styReservationValue = (isComing?: boolean) => css`
         color: var(--color-white);
         opacity: 1;
         border: solid 1px #a20a0a;
+
+        &:focus {
+          border: solid 1px #a20a0a;
+        }
       }
     `}
   }
@@ -187,6 +195,56 @@ export const styMessagesWrapper = css`
       display: block;
       width: 20px;
       height: 1px;
+    }
+  }
+`;
+
+const shimmer = keyframes`
+  100% {
+      transform: translateX(100%);
+    }
+`;
+
+export const stySkeleton = css`
+  position: relative;
+  display: block;
+  height: 81px;
+  background-color: #ebebeb;
+  width: 100%;
+  border-radius: 8px;
+
+  &::before {
+    position: absolute;
+    top: 10px;
+    left: -10px;
+    content: "";
+    display: block;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 5px 10px 10px 0;
+    border-color: transparent rgba(0, 0, 0, 0.05) transparent transparent;
+  }
+
+  span {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background-color: #ebebeb;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+
+    &::after {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      transform: translateX(-100%);
+      background-image: linear-gradient(90deg, #ebebeb, #f5f5f5, #ebebeb);
+      animation: ${shimmer} 1s infinite;
+      content: "";
     }
   }
 `;

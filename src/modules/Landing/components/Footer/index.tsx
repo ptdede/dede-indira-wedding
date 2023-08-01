@@ -1,10 +1,17 @@
+import { ParallaxBanner } from "react-scroll-parallax";
+
 import { imageFooter } from "src/constants/images";
+
 import { styFooterWrapper } from "./styles";
 
 const Footer = () => {
   return (
     <section css={styFooterWrapper}>
-      <img src={imageFooter} alt="" />
+      <ParallaxBanner
+        layers={[{ image: imageFooter, speed: -10 }]}
+        className="banner"
+      />
+      {/* <img src={imageFooter} alt="" /> */}
       <div className="description">
         <h1>Thank You</h1>
         <p>

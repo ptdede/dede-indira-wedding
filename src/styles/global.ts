@@ -377,10 +377,16 @@ export const globalCss = css`
 
   :root {
     --color-black: #222222;
-    --color-primary: #2a2f4f;
+    /* --color-primary: #2a2f4f;
     --color-secondary: #917fb3;
     --color-tertiary: #e5beec;
+    --color-accent: #fde2f3; */
+
+    --color-primary: #cb9956;
+    --color-secondary: #a67b00;
+    --color-tertiary: #848482;
     --color-accent: #fde2f3;
+
     --color-white: #fffbf5;
     --max-width: 415px;
     --font-primary: "Bodoni Moda", serif;

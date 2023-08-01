@@ -33,18 +33,25 @@ export const AnimatedInvitationHeroWrapper = styled(
     display: block;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, #2a2e2400 50%, #2a2e24 100%);
+    background-image: linear-gradient(180deg, #2a2e2400 80%, #2a2e24 100%);
     z-index: 1;
   }
 
   section {
     position: absolute;
     width: 100%;
-    bottom: 0;
     z-index: 2;
     text-align: center;
-    padding-bottom: 2rem;
+    padding: 2rem 0;
     color: var(--color-white);
+
+    &.top {
+      top: 5em;
+    }
+
+    &.bottom {
+      bottom: 0;
+    }
 
     .subtitle {
       font-family: var(--font-primary);

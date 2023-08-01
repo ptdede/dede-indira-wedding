@@ -2,7 +2,6 @@ import { useCallback, useEffect, useState } from "react";
 
 import { DocumentData, QuerySnapshot } from "firebase/firestore";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
-import Skeleton from "react-loading-skeleton";
 
 import useReceiver from "src/hooks/useReceiver";
 
@@ -10,6 +9,7 @@ import {
   styMessagesWrapper,
   styReservationValue,
   styReservationWrapper,
+  stySkeleton,
 } from "./styles";
 import { FormValues, ReservationData } from "./types";
 import {
@@ -163,13 +163,11 @@ const Reservation = () => {
 
         {isLoading && (
           <div className="loading">
-            <div>
-              <Skeleton width="80%" />
-              <Skeleton />
+            <div css={stySkeleton}>
+              <span />
             </div>
-            <div>
-              <Skeleton width="80%" />
-              <Skeleton />
+            <div css={stySkeleton}>
+              <span />
             </div>
           </div>
         )}

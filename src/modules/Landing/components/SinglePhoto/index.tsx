@@ -6,7 +6,7 @@ const SinglePhoto = () => {
   return (
     <section css={stySinglePhoto}>
       <ParallaxBanner
-        layers={[{ image: "images/single-photo.jpg", speed: -20 }]}
+        layers={[{ image: "images/single-photo.jpg", speed: -10 }]}
         className="banner"
       />
     </section>
