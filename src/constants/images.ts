@@ -27,22 +27,22 @@ export const sliderImages = [
 ];
 
 export const sliderImagesMen = [
-  "/images/couple/dede-1.JPG",
-  "/images/couple/dede-2.JPG",
+  "/images/couple/dede-1.jpg",
+  "/images/couple/dede-2.jpg",
 ];
 
 export const sliderImagesWomen = [
-  "/images/couple/indy-1.JPG",
-  "/images/couple/indy-2.JPG",
-  // "/images/couple/indy-3.JPG",
-  // "/images/couple/indy-4.JPG",
+  "/images/couple/indy-1.jpg",
+  "/images/couple/indy-2.jpg",
+  // "/images/couple/indy-3.jpg",
+  // "/images/couple/indy-4.jpg",
 ];
 
 export const floralImages = {
   FloralFrame,
 };
 
-export const imageFooter = "/images/footer.JPG";
+export const imageFooter = "/images/footer.jpg";
 
 export const imageCoupleIntro = [
   "/images/intro/intro-1.jpg",
@@ -53,18 +53,18 @@ export const imageCoupleIntro = [
 
 export const dateImages = {
   kpl: [
-    "/images/dates/kpl-1.JPG",
-    "/images/dates/kpl-2.JPG",
-    "/images/dates/kpl-3.JPG",
+    "/images/dates/kpl-1.jpg",
+    "/images/dates/kpl-2.jpg",
+    "/images/dates/kpl-3.jpg",
   ],
   sng: [
-    "/images/dates/sng-1.JPG",
-    "/images/dates/sng-2.JPG",
-    "/images/dates/sng-3.JPG",
+    "/images/dates/sng-1.jpg",
+    "/images/dates/sng-2.jpg",
+    "/images/dates/sng-3.jpg",
   ],
   bhm: [
-    "/images/dates/bhm-1.JPG",
-    "/images/dates/bhm-2.JPG",
-    "/images/dates/bhm-3.JPG",
+    "/images/dates/bhm-1.jpg",
+    "/images/dates/bhm-2.jpg",
+    "/images/dates/bhm-3.jpg",
   ],
 };
