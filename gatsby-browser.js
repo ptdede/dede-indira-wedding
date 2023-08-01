@@ -7,4 +7,3 @@ import "@fontsource/smooch";
 import "@fontsource/italianno";
 import "swiper/css";
 import "swiper/css/effect-fade";
-import "react-loading-skeleton/dist/skeleton.css";
