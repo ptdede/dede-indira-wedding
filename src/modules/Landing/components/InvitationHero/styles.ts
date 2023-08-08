@@ -33,7 +33,7 @@ export const AnimatedInvitationHeroWrapper = styled(
     display: block;
     width: 100%;
     height: 100%;
-    background-image: linear-gradient(180deg, #2a2e2400 80%, #2a2e24 100%);
+    background-image: linear-gradient(180deg, #2a2e2400 70%, #2a2e24 100%);
     z-index: 1;
   }
 
