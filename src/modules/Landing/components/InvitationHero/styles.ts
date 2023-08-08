@@ -46,11 +46,11 @@ export const AnimatedInvitationHeroWrapper = styled(
     color: var(--color-white);
 
     &.top {
-      top: 5em;
+      top: 4em;
     }
 
     &.bottom {
-      bottom: 0;
+      bottom: 2em;
     }
 
     .subtitle {
