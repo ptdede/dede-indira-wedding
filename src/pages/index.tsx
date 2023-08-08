@@ -19,10 +19,10 @@ export default IndexPage;
 export const Head: HeadFC = () => {
   return (
     <>
-      <title>Dede & Indira Wedding</title>
+      <title>Dede &amp; Indira Wedding</title>
       <link rel="preload" as="image" href="/images/cover-website.jpg"></link>
-      <meta property="og:site_name" content="Dede & Indira Wedding" />
-      <meta property="og:title" content="Dede & Indira Wedding" />
+      <meta property="og:site_name" content="Dede &amp; Indira Wedding" />
+      <meta property="og:title" content="Dede &amp; Indira Wedding" />
       <meta
         property="og:description"
         content="You have always been a big part of our lives. Let us share the big day
