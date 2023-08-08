@@ -30,7 +30,10 @@ export const Head: HeadFC = () => {
         invited!"
       />
       <meta property="og:url" content="https://wedding.ptdede.com" />
-      <meta property="og:image" content="/images/og-image.jpg" />
+      <meta
+        property="og:image"
+        content="https://wedding.ptdede.com/images/og-image.jpg"
+      />
       <meta property="og:image:width" content="1200" />
       <meta property="og:image:height" content="630" />
     </>
