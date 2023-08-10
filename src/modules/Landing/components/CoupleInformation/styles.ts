@@ -66,6 +66,18 @@ export const styCoupleInfoWrapper = css`
     .profile-information {
       text-align: right;
     }
+
+    .image-slider {
+      overflow: hidden;
+      border-bottom-left-radius: 48px;
+    }
+  }
+
+  .left-dir {
+    .image-slider {
+      overflow: hidden;
+      border-bottom-right-radius: 48px;
+    }
   }
 `;
 

@@ -4,6 +4,7 @@ import CoupleInformation from "./components/CoupleInformation";
 import CoupleIntro from "./components/CoupleIntro";
 import EventDate from "./components/EventDate";
 import Footer from "./components/Footer";
+import GalleryMoments from "./components/GalleryMoments";
 import InvitationHero from "./components/InvitationHero";
 import QuoteIntro from "./components/QuoteIntro";
 import Reservation from "./components/Reservation";
@@ -19,9 +20,10 @@ const Landing = () => {
       <QuoteIntro />
       <CoupleInformation />
       <EventDate />
+      <GalleryMoments />
+      <SendGift />
       <Reservation />
       <Footer />
-      <SendGift />
     </RootProvider>
   );
 };

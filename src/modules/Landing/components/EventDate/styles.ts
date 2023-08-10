@@ -124,9 +124,29 @@ export const styEventDateWrapper = css`
   }
 
   .dates {
+    .image-slider {
+      overflow: hidden;
+      border-top-right-radius: 32px;
+    }
+
+    .description-content {
+      border-bottom-left-radius: 32px;
+    }
+
     &:nth-of-type(even) {
       .description {
         flex-direction: row-reverse;
+      }
+
+      .image-slider {
+        overflow: hidden;
+        border-top-left-radius: 32px;
+        border-top-right-radius: 0;
+      }
+
+      .description-content {
+        border-bottom-right-radius: 32px;
+        border-bottom-left-radius: 0;
       }
     }
   }

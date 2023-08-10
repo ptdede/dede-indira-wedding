@@ -21,6 +21,8 @@ export const styCoupleIntroWrapper = css`
     height: 70vh;
     flex-grow: 0;
     flex-shrink: 0;
+    overflow: hidden;
+    border-bottom-right-radius: 48px;
 
     .slider {
       position: relative;
@@ -42,12 +44,13 @@ export const styCoupleIntroWrapper = css`
       bottom: 0;
       background: var(--color-secondary);
       color: var(--color-white);
-      padding: 0.8em 1em;
+      padding: 0.8em 1.4em;
       text-align: center;
       letter-spacing: 0.2em;
       font-weight: 400;
       font-size: 0.9em;
       font-weight: 300;
+      border-top-right-radius: 24px;
     }
   }
 
