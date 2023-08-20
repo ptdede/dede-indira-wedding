@@ -131,6 +131,25 @@ export const styEventDateWrapper = css`
 
     .description-content {
       border-bottom-left-radius: 32px;
+
+      .dates-wrapper {
+        display: flex;
+        align-items: center;
+
+        .dates-cal {
+          font-weight: bold;
+          text-align: center;
+          color: var(--color-white);
+          background-color: var(--color-primary);
+          padding: 0.5rem 1rem;
+          margin-right: 1rem;
+          line-height: 0;
+        }
+
+        .dates-date {
+          font-size: 2em;
+        }
+      }
     }
 
     &:nth-of-type(even) {

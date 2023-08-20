@@ -12,7 +12,7 @@ const GalleryMoments = () => {
       <Swiper className="slider" spaceBetween={0} speed={600}>
         {imageGallery.map((image, idx) => (
           <SwiperSlide key={`couple-intro-${idx}`}>
-            <img className="image" src={image} alt="" />
+            <img className="image" src={image} alt="" loading="lazy" />
           </SwiperSlide>
         ))}
       </Swiper>

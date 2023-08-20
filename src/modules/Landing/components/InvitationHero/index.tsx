@@ -59,7 +59,11 @@ const InvitationHero = () => {
         </AnimatedTrail>
       </section>
 
-      <img src="/images/cover-website.jpg" alt="landing banner" />
+      <img
+        src="/images/cover-website.jpg"
+        alt="landing banner"
+        loading="eager"
+      />
 
       <section className="bottom">
         <AnimatedTrail open={true}>

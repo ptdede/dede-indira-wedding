@@ -15,6 +15,8 @@ export const allDates: EventDate[] = [
     mapLink: "https://goo.gl/maps/nUjw4LmzZ6hXTZ2q9",
     note: "(Lokasi belakang SDN 3 Banjar Tegal)",
     images: dateImages.sng,
+    whenDate: "19",
+    whenMonth: "Sep",
   },
   {
     id: "KPL",
@@ -27,6 +29,8 @@ export const allDates: EventDate[] = [
     place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
     mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
     images: dateImages.kpl,
+    whenDate: "22",
+    whenMonth: "Sep",
   },
   {
     id: "KPL_RSV",
@@ -39,6 +43,8 @@ export const allDates: EventDate[] = [
     place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
     mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
     images: dateImages.sng,
+    whenDate: "22",
+    whenMonth: "Sep",
   },
   {
     id: "BHM_RSV",
@@ -54,5 +60,7 @@ export const allDates: EventDate[] = [
     mapLink: "https://goo.gl/maps/5TVqv5hcfTmYhkMt9",
     dresscode: "Dresscode: white",
     images: dateImages.bhm,
+    whenDate: "24",
+    whenMonth: "Sep",
   },
 ];

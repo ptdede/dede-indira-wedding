@@ -13,4 +13,6 @@ export interface EventDate {
   note?: string;
   vendorName?: string;
   dresscode?: string;
+  whenDate: string;
+  whenMonth: string;
 }

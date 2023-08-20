@@ -1,6 +1,9 @@
-import { useState } from "react";
+import { useRef, useState } from "react";
+
+import { animated } from "@react-spring/web";
 
 import { copyClipboard } from "src/helpers/copy-clipboard";
+import useCollapsibleHeightAnimation from "src/hooks/useCollapsibleHeightAnimation";
 
 import { bankAccounts } from "./constants";
 import { bankAccountWrapper, sendGiftWrapper } from "./styles";
@@ -10,6 +13,14 @@ const SendGift = () => {
     number: "",
     error: false,
   });
+  const [isOpen, setIsOpen] = useState(false);
+  const refSavedHeight = useRef(0);
+
+  const [ref, animatedStyle] = useCollapsibleHeightAnimation({
+    isVisible: isOpen,
+  });
+
+  console.log("isOpen", { isOpen, h: refSavedHeight.current });
 
   const handleBankClicked = (number: string) => {
     copyClipboard(
@@ -29,37 +40,53 @@ const SendGift = () => {
     );
   };
 
+  const toggleBankAccount = () => {
+    setIsOpen((prev) => !prev);
+  };
+
   return (
-    <section css={sendGiftWrapper}>
-      <h1>Wedding Gift</h1>
+    <section css={sendGiftWrapper(isOpen)}>
+      <img src="/images//gift-bg.jpg" alt="" />
 
-      <p className="intro-gift">
-        Your presence at our wedding is the greatest gift we could ask for, but
-        if you would like to honor us with a gift, we appreciate transfers to
-        the following bank account
-      </p>
+      <div className="gift-container">
+        <h1>Wedding Gift</h1>
 
-      <div css={bankAccountWrapper}>
-        {bankAccounts.map((bank, idx) => (
-          <div
-            className="bank-card"
-            key={`bank-account-${idx}`}
-            onClick={() => handleBankClicked(bank.number)}
-          >
-            <p className="vendor">{bank.vendor}</p>
-            <p className="acc-number">{bank.number}</p>
-            <p className="name">{bank.name}</p>
-            <div className="copy-button">
-              <p>
-                {copied && copied.number === bank.number
-                  ? !copied.error
-                    ? "Saved!"
-                    : "Copy error!"
-                  : "Copy to clipboard"}
-              </p>
+        <p className="intro-gift">
+          Your presence at our wedding is the greatest gift we could ask for,
+          but if you would like to honor us with a gift, we appreciate transfers
+          to the following bank account
+        </p>
+
+        <animated.div
+          ref={ref as any}
+          css={bankAccountWrapper}
+          style={animatedStyle as any}
+        >
+          {bankAccounts.map((bank, idx) => (
+            <div
+              className="bank-card"
+              key={`bank-account-${idx}`}
+              onClick={() => handleBankClicked(bank.number)}
+            >
+              <p className="vendor">{bank.vendor}</p>
+              <p className="acc-number">{bank.number}</p>
+              <p className="name">{bank.name}</p>
+              <div className="copy-button">
+                <p>
+                  {copied && copied.number === bank.number
+                    ? !copied.error
+                      ? "Saved!"
+                      : "Copy error!"
+                    : "Copy to clipboard"}
+                </p>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </animated.div>
+
+        <button type="button" onClick={toggleBankAccount}>
+          {isOpen ? "see less" : "See bank account"}
+        </button>
       </div>
     </section>
   );

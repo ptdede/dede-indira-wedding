@@ -17,7 +17,6 @@ export const galleryWrapper = css`
     width: 100%;
     height: 420px;
     overflow: initial;
-    margin-bottom: 2rem;
 
     .swiper-wrapper {
       margin: 0 -16px;

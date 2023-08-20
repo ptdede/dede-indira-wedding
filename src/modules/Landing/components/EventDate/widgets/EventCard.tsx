@@ -35,7 +35,7 @@ const EventCard = (props: EventCardProps) => {
         >
           {date.images.map((image, idx) => (
             <SwiperSlide key={`couple-intro-${idx}`}>
-              <img className="image" src={image} alt="" />
+              <img className="image" src={image} alt="" loading="lazy" />
             </SwiperSlide>
           ))}
         </Swiper>
@@ -46,8 +46,16 @@ const EventCard = (props: EventCardProps) => {
           <h2 className="title">{date.title}</h2>
 
           <div>
-            <p className="when">{date.when}</p>
-            <p className="time">{date.time}</p>
+            <div className="dates-wrapper">
+              <div className="dates-cal">
+                <p className="dates-date">{date.whenDate}</p>
+                <p className="dates-month">{date.whenMonth}</p>
+              </div>
+              <div>
+                <p className="when">{date.when}</p>
+                <p className="time">{date.time}</p>
+              </div>
+            </div>
             {date.dresscode && <p className="dresscode">{date.dresscode}</p>}
           </div>
 

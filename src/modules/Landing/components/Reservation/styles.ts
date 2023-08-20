@@ -184,6 +184,7 @@ export const styMessagesWrapper = css`
     font-size: 0.8em;
     padding: 1rem 0;
     padding-left: 24px;
+    cursor: pointer;
 
     &:before {
       position: absolute;
