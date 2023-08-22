@@ -1,14 +1,19 @@
 import { ParallaxBanner } from "react-scroll-parallax";
 
+import { imageRgVeda } from "src/constants/images";
+
 import { stySinglePhoto } from "./styles";
 
-const SinglePhoto = () => {
+interface SinglePhotoProps {
+  image?: string;
+}
+
+const SinglePhoto = (props: SinglePhotoProps) => {
+  const { image = imageRgVeda } = props;
+
   return (
     <section css={stySinglePhoto}>
-      <ParallaxBanner
-        layers={[{ image: "images/single-photo.jpg", speed: -10 }]}
-        className="banner"
-      />
+      <ParallaxBanner layers={[{ image, speed: -10 }]} className="banner" />
     </section>
   );
 };

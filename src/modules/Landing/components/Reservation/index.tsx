@@ -75,9 +75,10 @@ const Reservation = () => {
   }, [fetchData]);
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    const successData = await postToDatabase(data);
+    const successData = await postToDatabase({ ...data, receiver });
 
     if (!successData) {
+      // handle error
     } else {
       setMessages((prev) => [successData, ...prev]);
       reset();

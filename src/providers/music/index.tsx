@@ -26,7 +26,7 @@ const MusicProvider = (props: PropsWithChildren) => {
   const sound = useRef(
     isBrowser
       ? new Howl({
-          src: ["/music/thousand-year.mp3"],
+          src: ["/music/ngcml.mp3"],
           loop: true,
         })
       : null

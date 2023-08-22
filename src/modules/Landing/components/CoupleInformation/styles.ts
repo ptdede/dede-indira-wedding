@@ -39,7 +39,40 @@ export const styCoupleInfoWrapper = css`
   .profile-information {
     padding: 0 1.5rem;
     text-align: left;
-    margin-top: 2rem;
+    margin-top: 1rem;
+  }
+
+  .instagram {
+    display: inline-block;
+    background: linear-gradient(
+      45deg,
+      #f09433 0%,
+      #e6683c 25%,
+      #dc2743 50%,
+      #cc2366 75%,
+      #bc1888 100%
+    );
+    color: var(--color-white);
+    border-radius: 999px;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    font-size: 0.8em;
+
+    > div {
+      display: flex;
+      align-items: center;
+      padding: 0.3rem 1rem;
+    }
+
+    path {
+      fill: #fff;
+    }
+
+    svg {
+      width: 0.8rem;
+      height: 0.8rem;
+      margin-right: 0.5rem;
+    }
   }
 
   .profile-name {
@@ -47,7 +80,7 @@ export const styCoupleInfoWrapper = css`
     font-family: var(--font-primary);
     font-size: 2em;
     font-weight: 600;
-    color: var(--color-primary);
+    color: #a7036b;
     margin-bottom: 1rem;
   }
 

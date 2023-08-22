@@ -1,7 +1,8 @@
-import { useRef, useState } from "react";
+import { useState } from "react";
 
 import { animated } from "@react-spring/web";
 
+import { imageWeddingGift } from "src/constants/images";
 import { copyClipboard } from "src/helpers/copy-clipboard";
 import useCollapsibleHeightAnimation from "src/hooks/useCollapsibleHeightAnimation";
 
@@ -14,13 +15,10 @@ const SendGift = () => {
     error: false,
   });
   const [isOpen, setIsOpen] = useState(false);
-  const refSavedHeight = useRef(0);
 
   const [ref, animatedStyle] = useCollapsibleHeightAnimation({
     isVisible: isOpen,
   });
-
-  console.log("isOpen", { isOpen, h: refSavedHeight.current });
 
   const handleBankClicked = (number: string) => {
     copyClipboard(
@@ -38,6 +36,8 @@ const SendGift = () => {
         });
       }
     );
+
+    window.gtag("event", "click", { bankNumber: number });
   };
 
   const toggleBankAccount = () => {
@@ -46,7 +46,7 @@ const SendGift = () => {
 
   return (
     <section css={sendGiftWrapper(isOpen)}>
-      <img src="/images//gift-bg.jpg" alt="" />
+      <img src={imageWeddingGift} alt="" />
 
       <div className="gift-container">
         <h1>Wedding Gift</h1>

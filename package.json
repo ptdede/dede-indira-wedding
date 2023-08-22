@@ -30,6 +30,7 @@
     "gatsby": "^5.7.0",
     "gatsby-plugin-alias-imports": "^1.0.5",
     "gatsby-plugin-emotion": "^8.7.0",
+    "gatsby-plugin-google-gtag": "^5.11.0",
     "gatsby-plugin-image": "^3.7.0",
     "gatsby-plugin-manifest": "^5.7.0",
     "gatsby-plugin-netlify-cms": "^7.7.0",
@@ -49,6 +50,7 @@
   },
   "devDependencies": {
     "@emotion/eslint-plugin": "^11.10.0",
+    "@types/gtag.js": "^0.0.13",
     "@types/howler": "^2.2.7",
     "@types/node": "^18.14.0",
     "@types/react": "^18.0.28",

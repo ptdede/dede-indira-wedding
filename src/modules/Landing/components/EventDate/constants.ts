@@ -42,7 +42,7 @@ export const allDates: EventDate[] = [
     time: "09.00 WITA - finished",
     place: "Jalan Jempiring no 1, Banjar Pemebetan, Kapal, Badung, Bali",
     mapLink: "https://goo.gl/maps/77RcmGZt581z5oLs6",
-    images: dateImages.sng,
+    images: dateImages.kplrsp,
     whenDate: "22",
     whenMonth: "Sep",
   },

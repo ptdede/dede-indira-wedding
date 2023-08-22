@@ -11,7 +11,7 @@ export const sendGiftWrapper = (isOpen: boolean) => css`
     left: 0;
     top: 0;
     width: 100%;
-    height: 400px;
+    height: 230px;
     object-fit: cover;
     z-index: 0;
     border-top-right-radius: 48px;

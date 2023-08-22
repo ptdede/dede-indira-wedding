@@ -20,7 +20,9 @@ import { FormValues, ReservationData } from "../types";
 const rsvpDatabase = "rsvp";
 export const LIMIT_RSVP_DATA = 5;
 
-export const postToDatabase = async (data: FormValues) => {
+export const postToDatabase = async (
+  data: FormValues & { receiver: string }
+) => {
   try {
     const successRef = await addDoc(collection(database, rsvpDatabase), {
       ...data,
