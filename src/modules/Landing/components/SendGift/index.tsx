@@ -46,7 +46,7 @@ const SendGift = () => {
 
   return (
     <section css={sendGiftWrapper(isOpen)}>
-      <img src={imageWeddingGift} alt="" />
+      <img src={imageWeddingGift} alt="" loading="lazy" />
 
       <div className="gift-container">
         <h1>Wedding Gift</h1>
