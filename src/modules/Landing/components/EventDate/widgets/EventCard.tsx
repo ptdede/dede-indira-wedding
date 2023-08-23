@@ -1,4 +1,7 @@
+import { useEffect, useRef } from "react";
+
 import { useInView, a } from "@react-spring/web";
+import { atcb_action } from "add-to-calendar-button";
 import { Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
@@ -17,6 +20,45 @@ const EventCard = (props: EventCardProps) => {
   const [ref, springs] = useInView(
     index % 2 === 0 ? animRightToLeft : animLeftToRight
   );
+
+  const buttonAddCalendarRef = useRef<HTMLButtonElement>(null);
+
+  useEffect(() => {
+    if (buttonAddCalendarRef.current) {
+      const config = {
+        name: `Dede and Indira event - ${date.title}`,
+        description: `[h1]${
+          date.title
+        } Event[/h1][p]You have always been a big part of our lives. Let us share the big day as we unite our souls in a bond of love and devotion. You are cordially invited![/p][p]place: ${
+          date.vendorName ? `${date.vendorName} - ` : ""
+        }${date.place}${
+          date.note ? `[p]${date.note}[/p]` : ""
+        }[/p][p]map: [url]${date.mapLink}[/url][/p][p]Link undangan: [url]${
+          window.location.href
+        }[/url][/p]
+        `,
+        options: ["Google", "Outlook.com", "Apple"] as any,
+        location: date.mapLink,
+        startDate: date.rawDate.startDate,
+        startTime: date.rawDate.startTime,
+        endTime: date.rawDate.endTime,
+        timeZone: "Asia/Makassar",
+      };
+
+      buttonAddCalendarRef.current.addEventListener("click", () =>
+        atcb_action(config, buttonAddCalendarRef.current as any)
+      );
+    }
+  }, [
+    date.mapLink,
+    date.note,
+    date.place,
+    date.rawDate.endTime,
+    date.rawDate.startDate,
+    date.rawDate.startTime,
+    date.title,
+    date.vendorName,
+  ]);
 
   return (
     <a.div ref={ref} style={springs} className="dates">
@@ -71,6 +113,12 @@ const EventCard = (props: EventCardProps) => {
             <a href={date.mapLink} target="_blank" rel="noreferrer">
               <p>open google map</p>
             </a>
+          </div>
+
+          <div>
+            <button ref={buttonAddCalendarRef} className="atc" type="button">
+              add to calendar
+            </button>
           </div>
         </div>
         <div className="description-date">

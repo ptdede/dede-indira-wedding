@@ -15,4 +15,9 @@ export interface EventDate {
   dresscode?: string;
   whenDate: string;
   whenMonth: string;
+  rawDate: {
+    startDate: string;
+    startTime: string;
+    endTime: string;
+  };
 }

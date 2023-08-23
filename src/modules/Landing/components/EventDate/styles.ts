@@ -46,7 +46,7 @@ export const styEventDateWrapper = css`
     .description-content {
       background-color: var(--color-white);
       width: 80%;
-      padding: 2rem 1.5rem;
+      padding: 2rem 1.5rem 1.5rem 1.5rem;
       margin-top: -3rem;
       margin-right: 0;
 
@@ -66,6 +66,10 @@ export const styEventDateWrapper = css`
 
       > div {
         margin-bottom: 1rem;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
       }
 
       .vendor {
@@ -120,6 +124,24 @@ export const styEventDateWrapper = css`
           font-weight: 600;
         } */
       }
+    }
+  }
+
+  .atc {
+    width: 100%;
+    background-color: var(--color-secondary);
+    outline: none;
+    border: none;
+    color: var(--color-white);
+    padding: 0.5rem 1rem;
+    border-radius: 99px;
+    font-weight: 600;
+    font-size: 0.9em;
+    opacity: 0.7;
+    transition: all 300ms ease-in-out;
+
+    &:hover {
+      opacity: 1;
     }
   }
 

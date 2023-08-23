@@ -17,6 +17,11 @@ export const allDates: EventDate[] = [
     images: dateImages.sng,
     whenDate: "19",
     whenMonth: "Sep",
+    rawDate: {
+      startDate: "2023-09-19",
+      startTime: "10:00",
+      endTime: "18:00",
+    },
   },
   {
     id: "KPL",
@@ -31,6 +36,11 @@ export const allDates: EventDate[] = [
     images: dateImages.kpl,
     whenDate: "22",
     whenMonth: "Sep",
+    rawDate: {
+      startDate: "2023-09-22",
+      startTime: "08:00",
+      endTime: "12:00",
+    },
   },
   {
     id: "KPL_RSV",
@@ -45,6 +55,11 @@ export const allDates: EventDate[] = [
     images: dateImages.kplrsp,
     whenDate: "22",
     whenMonth: "Sep",
+    rawDate: {
+      startDate: "2023-09-22",
+      startTime: "09:00",
+      endTime: "22:00",
+    },
   },
   {
     id: "BHM_RSV",
@@ -62,5 +77,10 @@ export const allDates: EventDate[] = [
     images: dateImages.bhm,
     whenDate: "24",
     whenMonth: "Sep",
+    rawDate: {
+      startDate: "2023-09-24",
+      startTime: "18:00",
+      endTime: "22:00",
+    },
   },
 ];

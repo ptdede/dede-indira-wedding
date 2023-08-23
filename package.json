@@ -25,6 +25,7 @@
     "@fontsource/montserrat": "^4.5.14",
     "@fontsource/smooch": "^5.0.3",
     "@react-spring/web": "^9.7.1",
+    "add-to-calendar-button-react": "^2.3.3",
     "date-fns": "^2.30.0",
     "firebase": "^9.22.2",
     "gatsby": "^5.7.0",

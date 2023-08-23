@@ -3449,6 +3449,20 @@ acorn@^8.5.0, acorn@^8.7.1:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-8.8.2.tgz#1b2f25db02af965399b9776b0c2c391276d37c4a"
   integrity sha512-xjIYgE8HBrkpd/sJqOGNspf8uHG+NOHGOw6a/Urj8taM2EXfdNAH2oFcPeIFfsv3+kz/mJrS5VuMqbNLjCa2vw==
 
+add-to-calendar-button-react@^2.3.3:
+  version "2.3.3"
+  resolved "https://registry.yarnpkg.com/add-to-calendar-button-react/-/add-to-calendar-button-react-2.3.3.tgz#ec2cc35c584725c4ead515b59efed9a85e5a5152"
+  integrity sha512-Y0dly9fc3iAVngR/k1f3+ODPk+t3J/o/iL51PiAciqfEc3LqL7zMjNuFC2JI3ZlBwKd8IMzOzhLpEeDQIJsa3w==
+  dependencies:
+    add-to-calendar-button "^2.3.4"
+
+add-to-calendar-button@^2.3.4:
+  version "2.3.4"
+  resolved "https://registry.yarnpkg.com/add-to-calendar-button/-/add-to-calendar-button-2.3.4.tgz#559e6801db13cc25609810fce66a0882895b4b9e"
+  integrity sha512-4610w5Ke4u2F4vCeBfbT8Nnr6YRJ/RSeupKXz6SLEDyRzsTkHJowYFEtxTqdXeI0pDC2UXA0t9PH3G0yQ0xwFg==
+  dependencies:
+    timezones-ical-library "^1.7.1"
+
 address@1.2.2, address@^1.0.1, address@^1.1.2:
   version "1.2.2"
   resolved "https://registry.yarnpkg.com/address/-/address-1.2.2.tgz#2b5248dac5485a6390532c6a517fda2e3faac89e"
@@ -12532,6 +12546,11 @@ timers-ext@^0.1.7:
   dependencies:
     es5-ext "~0.10.46"
     next-tick "1"
+
+timezones-ical-library@^1.7.1:
+  version "1.7.1"
+  resolved "https://registry.yarnpkg.com/timezones-ical-library/-/timezones-ical-library-1.7.1.tgz#638abce1cb96cc98003172f9a73491206848ad5c"
+  integrity sha512-kMklJHvitGSl51ewFyDuFmgN+QRM2y4FmW6bOSl+etzUfOkGVWRmoGAoyaNunmVFY5jw0Puezg2cXwvsgaOkFQ==
 
 tiny-invariant@^1.0.1, tiny-invariant@^1.0.2:
   version "1.3.1"
