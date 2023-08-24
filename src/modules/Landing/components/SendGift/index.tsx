@@ -10,6 +10,7 @@ import useReceiver from "src/hooks/useReceiver";
 
 import { bankAccounts } from "./constants";
 import { bankAccountWrapper, sendGiftWrapper } from "./styles";
+import AnimatedDiv from "src/components/AnimatedDiv";
 
 const SendGift = () => {
   const [copied, setCopied] = useState({
@@ -59,48 +60,50 @@ const SendGift = () => {
 
   return (
     <section css={sendGiftWrapper(isOpen)}>
-      <img src={imageWeddingGift} alt="" loading="lazy" />
+      <AnimatedDiv direction="up">
+        <img src={imageWeddingGift} alt="" loading="lazy" />
 
-      <div className="gift-container">
-        <h1>Wedding Gift</h1>
+        <div className="gift-container">
+          <h1>Wedding Gift</h1>
 
-        <p className="intro-gift">
-          Your presence at our wedding is the greatest gift we could ask for,
-          but if you would like to honor us with a gift, we appreciate transfers
-          to the following bank account
-        </p>
+          <p className="intro-gift">
+            Your presence at our wedding is the greatest gift we could ask for,
+            but if you would like to honor us with a gift, we appreciate
+            transfers to the following bank account
+          </p>
 
-        <animated.div
-          ref={ref as any}
-          css={bankAccountWrapper}
-          style={animatedStyle as any}
-        >
-          {bankAccounts.map((bank, idx) => (
-            <div
-              className="bank-card"
-              key={`bank-account-${idx}`}
-              onClick={() => handleBankClicked(bank.number)}
-            >
-              <p className="vendor">{bank.vendor}</p>
-              <p className="acc-number">{bank.number}</p>
-              <p className="name">{bank.name}</p>
-              <div className="copy-button">
-                <p>
-                  {copied && copied.number === bank.number
-                    ? !copied.error
-                      ? "Saved!"
-                      : "Copy error!"
-                    : "Copy to clipboard"}
-                </p>
+          <animated.div
+            ref={ref as any}
+            css={bankAccountWrapper}
+            style={animatedStyle as any}
+          >
+            {bankAccounts.map((bank, idx) => (
+              <div
+                className="bank-card"
+                key={`bank-account-${idx}`}
+                onClick={() => handleBankClicked(bank.number)}
+              >
+                <p className="vendor">{bank.vendor}</p>
+                <p className="acc-number">{bank.number}</p>
+                <p className="name">{bank.name}</p>
+                <div className="copy-button">
+                  <p>
+                    {copied && copied.number === bank.number
+                      ? !copied.error
+                        ? "Saved!"
+                        : "Copy error!"
+                      : "Copy to clipboard"}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
-        </animated.div>
+            ))}
+          </animated.div>
 
-        <button type="button" onClick={toggleBankAccount}>
-          {isOpen ? "see less" : "See bank account"}
-        </button>
-      </div>
+          <button type="button" onClick={toggleBankAccount}>
+            {isOpen ? "see less" : "See bank account"}
+          </button>
+        </div>
+      </AnimatedDiv>
     </section>
   );
 };
