@@ -29,13 +29,13 @@ const EventCard = (props: EventCardProps) => {
         name: `Dede and Indira event - ${date.title}`,
         description: `[h1]${
           date.title
-        } Event[/h1][p]You have always been a big part of our lives. Let us share the big day as we unite our souls in a bond of love and devotion. You are cordially invited![/p][p]place: ${
+        } Event[/h1][p]You have always been a big part of our lives. Let us share the big day as we unite our souls in a bond of love and devotion. You are cordially invited![/p][br][p]Place: ${
           date.vendorName ? `${date.vendorName} - ` : ""
         }${date.place}${
           date.note ? `[p]${date.note}[/p]` : ""
-        }[/p][p]map: [url]${date.mapLink}[/url][/p][p]Link undangan: [url]${
-          window.location.href
-        }[/url][/p]
+        }[/p][p]Google map: [url]${
+          date.mapLink
+        }[/url][/p][p]Online invitation: [url]${window.location.href}[/url][/p]
         `,
         options: ["Google", "Outlook.com", "Apple"] as any,
         location: date.mapLink,
