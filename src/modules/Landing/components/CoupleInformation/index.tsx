@@ -5,6 +5,7 @@ import AnimatedText from "src/components/AnimatedText";
 import IconInstagram from "src/components/svgs/IconInstagram";
 import { animLeftToRight, animRightToLeft } from "src/constants/animation";
 import { imageBride, imageGroom } from "src/constants/images";
+import { track } from "src/helpers/trackers";
 import useReceiver from "src/hooks/useReceiver";
 
 import { styCoupleInfoWrapper, styProfilesWrapper } from "./styles";
@@ -15,7 +16,7 @@ const CoupleInformation = () => {
   const { receiver } = useReceiver();
 
   const handleInstagramClicked = (url: string) => {
-    window.gtag("event", "click", {
+    track("click", {
       name: "open instagram",
       receiver,
     });

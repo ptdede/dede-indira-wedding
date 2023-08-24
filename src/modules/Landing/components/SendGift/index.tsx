@@ -4,6 +4,7 @@ import { animated } from "@react-spring/web";
 
 import { imageWeddingGift } from "src/constants/images";
 import { copyClipboard } from "src/helpers/copy-clipboard";
+import { track } from "src/helpers/trackers";
 import useCollapsibleHeightAnimation from "src/hooks/useCollapsibleHeightAnimation";
 import useReceiver from "src/hooks/useReceiver";
 
@@ -40,7 +41,7 @@ const SendGift = () => {
       }
     );
 
-    window.gtag("event", "click", {
+    track("click", {
       name: "copy bank account",
       bankNumber: number,
       receiver,
@@ -48,7 +49,7 @@ const SendGift = () => {
   };
 
   const toggleBankAccount = () => {
-    window.gtag("event", "click", {
+    track("click", {
       name: "toggle bank account",
       receiver,
     });

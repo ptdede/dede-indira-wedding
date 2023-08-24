@@ -4,6 +4,7 @@ import { useSpring } from "@react-spring/web";
 import { useLockBodyScroll } from "react-use";
 
 import AnimatedTrail from "src/components/AnimatedTrail";
+import { track } from "src/helpers/trackers";
 import useReceiver from "src/hooks/useReceiver";
 import { useMusic } from "src/providers/music";
 
@@ -42,7 +43,7 @@ const InvitationHero = () => {
     });
     setBodyLocked(false);
     setAppear(false);
-    window.gtag("event", "click", {
+    track("click", {
       name: "open invitation",
       receiver,
     });

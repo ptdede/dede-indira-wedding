@@ -6,6 +6,7 @@ import { Autoplay, EffectFade } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
 import { animLeftToRight, animRightToLeft } from "src/constants/animation";
+import { track } from "src/helpers/trackers";
 
 import { EventDate } from "../types";
 
@@ -46,10 +47,11 @@ const EventCard = (props: EventCardProps) => {
       };
 
       buttonAddCalendarRef.current.addEventListener("click", () => {
-        window.gtag("event", "click", {
+        track("click", {
           name: "add to calendar",
           event: date.title,
         });
+
         atcb_action(config, buttonAddCalendarRef.current as any);
       });
     }

@@ -3,6 +3,7 @@ import { useCallback, useEffect, useState } from "react";
 import { DocumentData, QuerySnapshot } from "firebase/firestore";
 import { Controller, SubmitHandler, useForm } from "react-hook-form";
 
+import { track } from "src/helpers/trackers";
 import useReceiver from "src/hooks/useReceiver";
 
 import {
@@ -75,7 +76,7 @@ const Reservation = () => {
   }, [fetchData]);
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
-    window.gtag("event", "click", {
+    track("click", {
       name: "send message",
       receiver,
     });
@@ -83,7 +84,7 @@ const Reservation = () => {
     const successData = await postToDatabase({ ...data, receiver });
 
     if (!successData) {
-      window.gtag("event", "exception", {
+      track("exception", {
         name: "send message",
         receiver,
       });
