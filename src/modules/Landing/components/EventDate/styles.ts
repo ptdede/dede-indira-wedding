@@ -138,6 +138,7 @@ export const styEventDateWrapper = css`
     font-weight: 600;
     font-size: 0.9em;
     opacity: 0.7;
+    cursor: pointer;
     transition: all 300ms ease-in-out;
 
     &:hover {

@@ -5,6 +5,7 @@ import { animated } from "@react-spring/web";
 import { imageWeddingGift } from "src/constants/images";
 import { copyClipboard } from "src/helpers/copy-clipboard";
 import useCollapsibleHeightAnimation from "src/hooks/useCollapsibleHeightAnimation";
+import useReceiver from "src/hooks/useReceiver";
 
 import { bankAccounts } from "./constants";
 import { bankAccountWrapper, sendGiftWrapper } from "./styles";
@@ -15,6 +16,8 @@ const SendGift = () => {
     error: false,
   });
   const [isOpen, setIsOpen] = useState(false);
+
+  const { receiver } = useReceiver();
 
   const [ref, animatedStyle] = useCollapsibleHeightAnimation({
     isVisible: isOpen,
@@ -37,10 +40,19 @@ const SendGift = () => {
       }
     );
 
-    window.gtag("event", "click", { bankNumber: number });
+    window.gtag("event", "click", {
+      name: "copy bank account",
+      bankNumber: number,
+      receiver,
+    });
   };
 
   const toggleBankAccount = () => {
+    window.gtag("event", "click", {
+      name: "toggle bank account",
+      receiver,
+    });
+
     setIsOpen((prev) => !prev);
   };
 

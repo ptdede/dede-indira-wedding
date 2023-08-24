@@ -75,9 +75,18 @@ const Reservation = () => {
   }, [fetchData]);
 
   const onSubmit: SubmitHandler<FormValues> = async (data) => {
+    window.gtag("event", "click", {
+      name: "send message",
+      receiver,
+    });
+
     const successData = await postToDatabase({ ...data, receiver });
 
     if (!successData) {
+      window.gtag("event", "exception", {
+        name: "send message",
+        receiver,
+      });
       // handle error
     } else {
       setMessages((prev) => [successData, ...prev]);

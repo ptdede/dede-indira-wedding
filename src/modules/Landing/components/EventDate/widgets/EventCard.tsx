@@ -45,9 +45,13 @@ const EventCard = (props: EventCardProps) => {
         timeZone: "Asia/Makassar",
       };
 
-      buttonAddCalendarRef.current.addEventListener("click", () =>
-        atcb_action(config, buttonAddCalendarRef.current as any)
-      );
+      buttonAddCalendarRef.current.addEventListener("click", () => {
+        window.gtag("event", "click", {
+          name: "add to calendar",
+          event: date.title,
+        });
+        atcb_action(config, buttonAddCalendarRef.current as any);
+      });
     }
   }, [
     date.mapLink,

@@ -42,7 +42,11 @@ const InvitationHero = () => {
     });
     setBodyLocked(false);
     setAppear(false);
-  }, [animation, handleSoundPlay, height]);
+    window.gtag("event", "click", {
+      name: "open invitation",
+      receiver,
+    });
+  }, [animation, handleSoundPlay, height, receiver]);
 
   return (
     <AnimatedInvitationHeroWrapper
