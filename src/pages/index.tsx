@@ -24,10 +24,12 @@ export const Head: HeadFC = () => {
       <meta property="og:site_name" content="Dede and Indira Wedding" />
       <meta property="og:title" content="Dede and Indira Wedding" />
       <meta
+        name="description"
+        content="You have always been a big part of our lives. You are cordially invited!"
+      />
+      <meta
         property="og:description"
-        content="You have always been a big part of our lives. Let us share the big day
-        as we unite our souls in a bond of love and devotion. You are cordially
-        invited!"
+        content="You have always been a big part of our lives. You are cordially invited!"
       />
       <meta property="og:url" content="https://wedding.ptdede.com" />
       <meta
