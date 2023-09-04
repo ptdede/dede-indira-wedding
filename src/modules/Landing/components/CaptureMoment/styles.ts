@@ -6,7 +6,7 @@ export const styCaptureMomentWrapper = css`
   }
 
   .title {
-    width: 15vw;
+    width: 15%;
     flex-grow: 0;
     display: flex;
     justify-content: center;
@@ -26,7 +26,7 @@ export const styCaptureMomentWrapper = css`
   }
 
   .photo {
-    width: 85vw;
+    width: 85%;
 
     > div {
       height: 400px;
