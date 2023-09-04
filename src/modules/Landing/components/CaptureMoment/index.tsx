@@ -23,7 +23,7 @@ const CaptureMoment = () => {
               <AnimatedText className="hashtag">#DEfinitelyINDY</AnimatedText>
               <AnimatedText className="text">
                 When you share photos of our day on social media, please use our
-                hashtag so we can enjoy them too!
+                hashtag so we can enjoy them too 🤍
               </AnimatedText>
             </div>
           </ParallaxBanner>
