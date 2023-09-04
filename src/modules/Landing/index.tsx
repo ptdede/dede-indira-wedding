@@ -1,5 +1,6 @@
 import RootProvider from "src/providers";
 
+import CaptureMoment from "./components/CaptureMoment";
 import CoupleInformation from "./components/CoupleInformation";
 import CoupleIntro from "./components/CoupleIntro";
 import EventDate from "./components/EventDate";
@@ -22,6 +23,7 @@ const Landing = () => {
       <EventDate />
       <GalleryMoments />
       <SendGift />
+      <CaptureMoment />
       <Reservation />
       <Footer />
     </RootProvider>
