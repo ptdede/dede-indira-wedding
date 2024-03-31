@@ -9,7 +9,6 @@ import GalleryMoments from "./components/GalleryMoments";
 import InvitationHero from "./components/InvitationHero";
 import QuoteIntro from "./components/QuoteIntro";
 import Reservation from "./components/Reservation";
-import SendGift from "./components/SendGift";
 import SinglePhoto from "./components/SinglePhoto";
 
 const Landing = () => {
@@ -22,7 +21,6 @@ const Landing = () => {
       <CoupleInformation />
       <EventDate />
       <GalleryMoments />
-      <SendGift />
       <CaptureMoment />
       <Reservation />
       <Footer />

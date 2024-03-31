@@ -114,6 +114,18 @@ const EventCard = (props: EventCardProps) => {
             <p className="place">{date.place}</p>
             <p className="note">{date.note}</p>
           </div>
+
+          <div>
+            <a href={date.mapLink} target="_blank" rel="noreferrer">
+              <p>open google map</p>
+            </a>
+          </div>
+
+          <div>
+            <button ref={buttonAddCalendarRef} className="atc" type="button">
+              add to calendar
+            </button>
+          </div>
         </div>
         <div className="description-date">
           <p dangerouslySetInnerHTML={{ __html: date.dateVertical }} />
